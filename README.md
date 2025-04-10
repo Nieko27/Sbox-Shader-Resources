@@ -1,1 +1,1 @@
-# Sbox_Shader_Resources
+# Sbox Shader Resources
