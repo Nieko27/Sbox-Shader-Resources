@@ -1,0 +1,132 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_clamprange.shdrfunc",
+  "Model": null,
+  "Title": "SF Clamp Range",
+  "Description": "Clamps input to new range",
+  "Category": "Utility",
+  "Icon": "compare_arrows",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Maximum",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "0",
+      "Position": "-696,72",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Subtract",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "1",
+      "Position": "-408,-48",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "6",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Subtract",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "2",
+      "Position": "-408,72",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "0",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Saturate",
+      "Identifier": "3",
+      "Position": "-168,0",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "4",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "4",
+      "Position": "-276,0",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "1",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Minimum",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "5",
+      "Position": "-696,-24",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Input",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "6",
+      "Position": "-696,-84",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "e9ebc883-fbc4-4576-9630-dec0c822408a",
+          "Name": "Result",
+          "Type": "float"
+        }
+      ],
+      "Identifier": "7",
+      "Position": "72,0",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    }
+  ]
+}

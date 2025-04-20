@@ -1,0 +1,180 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_atlas.shdrfunc",
+  "Model": null,
+  "Title": "SF Atlas",
+  "Description": null,
+  "Category": "Utility",
+  "Icon": "grid_view",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "0",
+      "Position": "-120,0",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "7",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "10",
+        "Output": "Output"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "UPos",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "1",
+      "Position": "-1212,60",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "2",
+      "Position": "-540,192",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "5",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Round",
+      "Identifier": "3",
+      "Position": "-924,216",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "4",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Vpos",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "4",
+      "Position": "-1212,216",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "AtlasTileSize",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "5",
+      "Position": "-804,144",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "1,1",
+      "Identifier": "6",
+      "Position": "-516,-60",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "7",
+      "Position": "-300,-60",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "6",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "8",
+      "Position": "-540,60",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "9",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Round",
+      "Identifier": "9",
+      "Position": "-924,60",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "AppendVector",
+      "Identifier": "10",
+      "Position": "-384,108",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "8",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "9a13436f-55e6-40a4-a92b-7def7224fdac",
+          "Name": "Result",
+          "Type": "Vector2"
+        }
+      ],
+      "Identifier": "11",
+      "Position": "-12,0",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    }
+  ]
+}

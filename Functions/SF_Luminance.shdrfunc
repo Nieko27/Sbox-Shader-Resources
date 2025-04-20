@@ -1,0 +1,76 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_luminance.shdrfunc",
+  "Model": null,
+  "Title": "SF Luminance",
+  "Description": "Luminance from texture",
+  "Category": "Utility",
+  "Icon": "light_mode",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "DotProduct",
+      "Identifier": "0",
+      "Position": "-324,84",
+      "HandleOffsets": {},
+      "InputA": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "InputB": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float3",
+      "Min": "0,0,0",
+      "Max": "0,0,0",
+      "Value": "0.3086,0.6094,0.082",
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "1",
+      "Position": "-576,180",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float4",
+      "Value": "1,1,1,1",
+      "Name": "Color",
+      "IsAttribute": true,
+      "UI": {
+        "Type": "Color"
+      },
+      "Identifier": "2",
+      "Position": "-576,12",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "581a984c-1225-49c2-9c3b-946bbc2f312d",
+          "Name": "Result",
+          "Type": "Vector3"
+        }
+      ],
+      "Identifier": "3",
+      "Position": "-144,84",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_checkerboard.shdrfunc",
+  "Model": null,
+  "Title": "SF Checker Board",
+  "Description": "Checker Pattern",
+  "Category": "Procedural",
+  "Icon": "grid_on",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "1,1",
+      "Identifier": "0",
+      "Position": "-1332,24",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Floor",
+      "Identifier": "1",
+      "Position": "-972,-24",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 4,
+      "Name": "Scale",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "2",
+      "Position": "-1560,-48",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "3",
+      "Position": "-1116,-24",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "8",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "SplitVector",
+      "Identifier": "4",
+      "Position": "-828,-24",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "5",
+      "Position": "-624,-24",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "4",
+        "Output": "X"
+      },
+      "B": {
+        "Identifier": "4",
+        "Output": "Y"
+      }
+    },
+    {
+      "_class": "Mod",
+      "DefaultA": 0,
+      "DefaultB": 2,
+      "Identifier": "6",
+      "Position": "-492,-24",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "feab1633-0f49-4ca9-951f-4e767b81a340",
+          "Name": "Result",
+          "Type": "Vector3"
+        }
+      ],
+      "Identifier": "7",
+      "Position": "-384,-24",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Round",
+      "Identifier": "8",
+      "Position": "-1284,-48",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    }
+  ]
+}

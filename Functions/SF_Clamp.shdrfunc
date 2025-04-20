@@ -1,0 +1,106 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_clamp.shdrfunc",
+  "Model": null,
+  "Title": "SF Clamp",
+  "Description": "Restricts a value between a min and max",
+  "Category": "Transform",
+  "Icon": "compare_arrows",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 1,
+      "Name": "MaxVal",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "0",
+      "Position": "-396,144",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "MinVal",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "1",
+      "Position": "-624,120",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Value",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "2",
+      "Position": "-624,60",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Max",
+      "DefaultA": 0,
+      "DefaultB": 0,
+      "Identifier": "3",
+      "Position": "-396,60",
+      "HandleOffsets": {},
+      "InputA": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "InputB": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Min",
+      "DefaultA": 0,
+      "DefaultB": 0,
+      "Identifier": "4",
+      "Position": "-168,60",
+      "HandleOffsets": {},
+      "InputA": {
+        "Identifier": "3",
+        "Output": "Result"
+      },
+      "InputB": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "b05bb646-f591-4c77-b244-3d88fb268158",
+          "Name": "Result",
+          "Type": "float"
+        }
+      ],
+      "Identifier": "5",
+      "Position": "36,60",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "4",
+        "Output": "Result"
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_inversesmoothstep.shdrfunc",
+  "Model": null,
+  "Title": "SF Inverse Smooth Step",
+  "Description": null,
+  "Category": "Unary",
+  "Icon": null,
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Subtract",
+      "DefaultA": 0.5,
+      "DefaultB": 1,
+      "Identifier": "0",
+      "Position": "36,24",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Arcsin",
+      "Identifier": "1",
+      "Position": "-408,48",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "4",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "X",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "2",
+      "Position": "-960,72",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 3,
+      "Identifier": "3",
+      "Position": "-252,48",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Subtract",
+      "DefaultA": 1,
+      "DefaultB": 1,
+      "Identifier": "4",
+      "Position": "-504,48",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Sine",
+      "Identifier": "5",
+      "Position": "-132,48",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 2,
+      "Identifier": "6",
+      "Position": "-732,72",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "4ce8f381-d4a5-4106-9594-fd96086510c6",
+          "Name": "Result",
+          "Type": "float"
+        }
+      ],
+      "Identifier": "7",
+      "Position": "132,24",
+      "HandleOffsets": {},
+      "Result_e193cbe7-74fd-4083-bcbb-74ca81a462ae": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    }
+  ]
+}

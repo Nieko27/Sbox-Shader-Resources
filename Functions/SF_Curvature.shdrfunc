@@ -1,0 +1,108 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_curvature.shdrfunc",
+  "Model": null,
+  "Title": "SF Curvature",
+  "Description": "Gets curvature from normals",
+  "Category": "Procedural",
+  "Icon": "crop_free",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Length",
+      "Identifier": "0",
+      "Position": "-144,60",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "1",
+      "Position": "12,12",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "DDX",
+      "Precision": "Standard",
+      "Identifier": "2",
+      "Position": "-276,-12",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "DDY",
+      "Precision": "Standard",
+      "Identifier": "3",
+      "Position": "-276,60",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Length",
+      "Identifier": "4",
+      "Position": "-144,-12",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "81690e04-8ec0-474b-8606-ca13e469b213",
+          "Name": "Result",
+          "Type": "Vector3"
+        }
+      ],
+      "Identifier": "5",
+      "Position": "120,12",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float3",
+      "Min": "0,0,0",
+      "Max": "1,1,1",
+      "Value": "0,0,0",
+      "Name": "Normals",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "6",
+      "Position": "-480,24",
+      "HandleOffsets": {}
+    }
+  ]
+}
