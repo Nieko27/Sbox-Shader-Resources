@@ -1,0 +1,108 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_fwidth.shdrfunc",
+  "Model": null,
+  "Title": "SF Fwidth",
+  "Description": "Value change between pixels",
+  "Category": "Utility",
+  "Icon": "change_history",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Abs",
+      "Identifier": "0",
+      "Position": "-120,-12",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Input",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "1",
+      "Position": "-432,24",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Abs",
+      "Identifier": "2",
+      "Position": "-120,72",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "DDY",
+      "Precision": "Standard",
+      "Identifier": "3",
+      "Position": "-252,72",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "4",
+      "Position": "-36,12",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "0",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "DDX",
+      "Precision": "Standard",
+      "Identifier": "5",
+      "Position": "-252,-12",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "47ac9892-e154-4e92-a056-7ada6a9eb5a2",
+          "Name": "Result",
+          "Type": "float"
+        }
+      ],
+      "Identifier": "6",
+      "Position": "96,12",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "4",
+        "Output": "Result"
+      }
+    }
+  ]
+}

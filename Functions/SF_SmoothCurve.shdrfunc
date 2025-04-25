@@ -1,0 +1,138 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_smoothcurve.shdrfunc",
+  "Model": null,
+  "Title": "SF Smooth Curve",
+  "Description": null,
+  "Category": "Transform",
+  "Icon": "keyboard_option_key",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 3,
+      "Value": 3,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "0",
+      "Position": "-504,252",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "1",
+      "Position": "-504,312",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float3",
+      "Min": "0,0,0",
+      "Max": "1,1,1",
+      "Value": "0,0,0",
+      "Name": "X",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "2",
+      "Position": "-780,132",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "3",
+      "Position": "-60,108",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "4",
+      "Position": "-228,108",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Subtract",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "5",
+      "Position": "-228,252",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "0",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 2,
+      "Value": 2,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "6",
+      "Position": "-780,348",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "5b3dc9f8-938d-4004-a42f-45151e939337",
+          "Name": "Result",
+          "Type": "Vector3"
+        }
+      ],
+      "Identifier": "7",
+      "Position": "60,108",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    }
+  ]
+}

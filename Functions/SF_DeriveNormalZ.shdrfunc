@@ -1,0 +1,146 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_derivenormalz.shdrfunc",
+  "Model": null,
+  "Title": "SF Derive Normal Z",
+  "Description": null,
+  "Category": "Transform",
+  "Icon": "square_foot",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "CombineVector",
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "0",
+      "Position": "-180,0",
+      "HandleOffsets": {},
+      "X": {
+        "Identifier": "6",
+        "Output": "R"
+      },
+      "Y": {
+        "Identifier": "6",
+        "Output": "G"
+      },
+      "Z": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "1",
+      "Position": "-708,108",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Sqrt",
+      "Identifier": "2",
+      "Position": "-468,84",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "3",
+      "Position": "-876,72",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "6",
+        "Output": "G"
+      },
+      "B": {
+        "Identifier": "6",
+        "Output": "G"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "4",
+      "Position": "-876,-12",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "6",
+        "Output": "R"
+      },
+      "B": {
+        "Identifier": "6",
+        "Output": "R"
+      }
+    },
+    {
+      "_class": "Subtract",
+      "DefaultA": 1,
+      "DefaultB": 1,
+      "Identifier": "5",
+      "Position": "-600,84",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/dev/white_color.tga",
+      "Sampler": {},
+      "UI": {
+        "Name": "Normal",
+        "IsAttribute": true,
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "ColorSpace": "Linear",
+        "ImageFormat": "BC7"
+      },
+      "Identifier": "6",
+      "Position": "-1128,0",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "78a2e663-b718-43a3-a945-45855807ab61",
+          "Name": "Result",
+          "Type": "Vector3"
+        }
+      ],
+      "Identifier": "7",
+      "Position": "24,24",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "0",
+        "Output": "XYZ"
+      }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_flattennormal.shdrfunc",
+  "Model": null,
+  "Title": "SF Flatten Normal",
+  "Description": null,
+  "Category": "Utility",
+  "Icon": "arrow_downward",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Flatness",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "0",
+      "Position": "-732,468",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "1",
+      "Position": "-180,120",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TransformNormal",
+      "InputSpace": "Tangent",
+      "OutputSpace": "Tangent",
+      "DecodeNormal": true,
+      "Identifier": "2",
+      "Position": "-552,120",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/dev/white_color.tga",
+      "Sampler": {},
+      "UI": {
+        "Name": "Normal",
+        "IsAttribute": true,
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "ColorSpace": "Linear",
+        "ImageFormat": "BC7"
+      },
+      "Identifier": "3",
+      "Position": "-732,120",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float3",
+      "Min": "0,0,0",
+      "Max": "1,1,1",
+      "Value": "0,0,1",
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "4",
+      "Position": "-732,336",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "a6dda3af-acd9-4269-b728-a680f2d3ecac",
+          "Name": "Result",
+          "Type": "Vector3"
+        }
+      ],
+      "Identifier": "5",
+      "Position": "24,120",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    }
+  ]
+}

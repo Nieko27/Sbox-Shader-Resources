@@ -1,0 +1,114 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_posterize.shdrfunc",
+  "Model": null,
+  "Title": "SF Posterize",
+  "Description": null,
+  "Category": "Transform",
+  "Icon": "compress",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "0",
+      "Position": "12,36",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "ColorsLimit",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "1",
+      "Position": "-684,156",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Round",
+      "Identifier": "2",
+      "Position": "-468,156",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float3",
+      "Min": "0,0,0",
+      "Max": "1,1,1",
+      "Value": "0,0,0",
+      "Name": "Color",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "3",
+      "Position": "-516,24",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Round",
+      "Identifier": "4",
+      "Position": "-168,36",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "5",
+      "Position": "-276,36",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "3",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "0567f02d-401e-44bb-b539-cd8144d428eb",
+          "Name": "Result",
+          "Type": "Vector3"
+        }
+      ],
+      "Identifier": "6",
+      "Position": "120,36",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    }
+  ]
+}

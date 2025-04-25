@@ -1,0 +1,127 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_contrast.shdrfunc",
+  "Model": null,
+  "Title": "SF Contrast",
+  "Description": null,
+  "Category": "Transform",
+  "Icon": "contrast",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "0",
+      "Position": "-852,72",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Subtract",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "1",
+      "Position": "-852,-12",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "SplitVector",
+      "Identifier": "2",
+      "Position": "-192,24",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Saturate",
+      "Identifier": "3",
+      "Position": "-348,24",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "4",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "4",
+      "Position": "-564,24",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "1",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "0",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Input",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "5",
+      "Position": "-936,156",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Contrast",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "6",
+      "Position": "-1116,36",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "cacc219e-a396-42e2-a963-9450b4ad64c5",
+          "Name": "Result",
+          "Type": "float"
+        }
+      ],
+      "Identifier": "7",
+      "Position": "0,24",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "2",
+        "Output": "X"
+      }
+    }
+  ]
+}

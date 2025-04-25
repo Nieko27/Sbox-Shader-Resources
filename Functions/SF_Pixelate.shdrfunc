@@ -1,0 +1,114 @@
+{
+  "IsSubgraph": true,
+  "Path": "shader functions/sf_pixelate.shdrfunc",
+  "Model": null,
+  "Title": "SF Pixelate",
+  "Description": null,
+  "Category": "Transform",
+  "Icon": "square",
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Floor",
+      "Identifier": "0",
+      "Position": "-492,144",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 0,
+      "Value": 0,
+      "Name": "Pixel Amount",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "1",
+      "Position": "-684,144",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float2",
+      "Min": "0,0",
+      "Max": "0,0",
+      "Value": "0,0",
+      "Name": "UV",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "2",
+      "Position": "-684,36",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "3",
+      "Position": "-300,36",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Floor",
+      "Identifier": "4",
+      "Position": "-168,36",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "5",
+      "Position": "-0,36",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "0",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "119f43a1-d11f-40d7-9a4d-3b290b70f4dd",
+          "Name": "Result",
+          "Type": "Vector2"
+        }
+      ],
+      "Identifier": "6",
+      "Position": "120,36",
+      "HandleOffsets": {},
+      "Result": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    }
+  ]
+}
