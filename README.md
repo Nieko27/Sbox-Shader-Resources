@@ -9,6 +9,15 @@ If you find a bug or would like to make a request for a certain shader or peice 
 * SF_Curvature
 * SF_InverseSmoothStep
 * SF_Luminance
+* SF_Contrast
+* SF_DeriveNormalZ
+* SF_FlattenNormal
+* SF_Fwidth
+* SF_Pixelate
+* SF_Posterize
+* SF_SmoothCurve
+* SF_TriWave
+
 ### Shaders
 ### Examples
 Examples will be anything that might still be useful but don't really fit into a material function or being a full shader.
