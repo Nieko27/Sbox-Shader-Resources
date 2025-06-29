@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Banner_01.png" alt="Banner" />
+  <img src="Banner_02.png" alt="Banner" />
 </p>
 
 ## Requesting Content
